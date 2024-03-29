@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Steam</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    gridTemplateColumns: {
+                        'cards': 'repeat(4, minmax(240px, 1fr))',
+                    },
+                    screens: {
+                        'lgNewRelease': { 'max': '1080px' },
+                        'smFooter': { 'max': '768px' }
+                    },
+                    colors: {
+                        'discount': '#BEEE11',
+                        'discountOriginalPrice': '#738895',
+                    },
+                    boxShadow: {
+                        'moreMenu': '0 0 3px #000'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/de991fd127.js" crossorigin="anonymous"></script>
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="assets/homepage.css">
+</head>
+
+<body>
+    <!-- Fariz -->
+    <div class="bg-[#1b2838] py-10 px-6">
+        <!-- Feature: Browse by Category -->
+        <div class="max-w-[1100px] text-white mx-auto mb-16 relative">
+            <h2 class="uppercase mb-5 tracking-wider">Browse by Category</h2>
+            <div
+                class="absolute gradient-arrow-left top-1/2 bottom-1/2 -translate-y-1/2 -left-[3.9rem] flex py-[4.2rem] px-4 justify-center items-center cursor-pointer">
+                <div>
+                    <i class="fa-solid fa-chevron-left text-white text-5xl"></i>
+                </div>
+            </div>
+            <div
+                class="absolute gradient-arrow-right top-1/2 bottom-1/2 -translate-y-1/2 -right-[3.9rem] flex py-[4.2rem] px-4 justify-center items-center cursor-pointer">
+                <div>
+                    <i class="fa-solid fa-chevron-right text-white text-5xl"></i>
+                </div>
+            </div>
+            <div class="flex gap-4 overflow-x-auto pb-5 tracking-widest text-lg font-semibold relative"
+                id="categoryContainer">
+                <!-- Code in JS -->
+            </div>
+            <div class="carousel-thumbs flex gap-1 justify-center mt-3">
+                <div class="carousel-thumb focus w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+            </div>
+        </div>
+        <!-- END Feature: Browse by Category -->
+
+        <!-- Feature: Sign In -->
+        <div class="max-w-[1100px] mx-auto text-center bg-[#00000033] p-6 mb-10 rounded-sm text-[#8f98a0] font-normal">
+            <span class="block mb-4">Sign in to view personalized recommendation</span>
+            <a href="login.html"
+                class="inline-block rounded-sm sign-in-btn text-[#D2E885] mb-6 p-[1px] hover:text-white">
+                <span class="block rounded-t-[0.25rem] px-4 py-1">Sign In</span>
+            </a>
+            <span class="block">Or <a href="register.html" class="text-white hover:text-[#66c0f4]">sign up</a> and join
+                Steam
+                for
+                free</span>
+        </div>
+        <!-- END Feature: Sign In -->
+
+        <!-- Feature: Browse Steam (CATEGORY BY NEW RELEASE, SPECIALS, ETC)-->
+        <div class="max-w-[1100px] text-white mx-auto tracking-wider">
+            <h2 class="uppercase mb-2">Browse Steam</h2>
+            <div class="grid grid-cols-cards gap-3 text-center font-semibold lgNewRelease:grid-cols-2"
+                id="browsesContainer">
+                <!-- Code in JS -->
+            </div>
+        </div>
+        <!-- END Feature: Browse Steam -->
+
+        <!-- Feature: Under 90k -->
+        <div class="max-w-[1100px] text-white mx-auto mt-10 relative under-90k-container">
+            <div class="flex justify-between items-end mb-1.5">
+                <h2 class="uppercase tracking-wider flex-1">Under RP 90 000</h2>
+                <div class="flex-1 text-right">
+                    <button class="uppercase border border-[#ffffff66] px-3 py-0.5 text-sm hover:border-white">Under RP
+                        90
+                        000</button>
+                    <button class="uppercase border border-[#ffffff66] px-3 py-0.5 text-sm hover:border-white">Under Rp
+                        45
+                        000</button>
+                </div>
+            </div>
+            <div
+                class="absolute gradient-arrow-left top-1/2 bottom-1/2 -translate-y-1/2 flex py-[3.9rem] px-3 -left-[3.3rem] justify-center items-center cursor-pointer">
+                <div>
+                    <i class="fa-solid fa-chevron-left text-white text-5xl"></i>
+                </div>
+            </div>
+            <div
+                class="absolute gradient-arrow-right top-1/2 bottom-1/2 -translate-y-1/2 flex py-[3.9rem] px-3 -right-[3.4rem] justify-center items-center cursor-pointer">
+                <div>
+                    <i class="fa-solid fa-chevron-right text-white text-5xl"></i>
+                </div>
+            </div>
+            <div class="grid grid-cols-cards gap-3 overflow-x-auto overflow-y-visible pb-3 relative">
+                <div class="relative gradient-game-cards group/game-card text-xs">
+                    <a href="product-detail/ohDeerProdDetail.html">
+                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/2708450/header_292x136.jpg?t=1710877806"
+                            alt="">
+                        <div class="p-1 flex">
+                            <div class="px-1 py-0.5 text-discount bg-[#4c6b22]">
+                                <span class=" ">-20%</span>
+                            </div>
+                            <div class="px-1 py-0.5 bg-[#141f2c66]">
+                                <span
+                                    class="text-discountOriginalPrice before:content-[''] relative before:left-0 before:right-0 before:border-b before:absolute before:top-[43%] before:-skew-y-[8deg] before:border-discountOriginalPrice">Rp
+                                    90
+                                    999</span>
+                                <span class="text-discount">Rp 72 799</span>
+                            </div>
+                        </div>
+                    </a>
+                    <button
+                        class="absolute flex bg-white transition opacity-0 translate-x-1 right-1.5 top-1.5 px-2 py-[0.33rem] rounded-[0.15rem] shadow-moreMenu text-black gap-[0.15rem] group-hover/game-card:translate-x-0 group-hover/game-card:opacity-100 hover:bg-[#67c1f5] group/more-menu game-card-more-btn">
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                    </button>
+                </div>
+                <div class="relative gradient-game-cards group/game-card text-xs">
+                    <a href="product-detail/phasmoProdDetail.html">
+                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/739630/header_292x136.jpg?t=1702309974"
+                            alt="">
+                        <div class="p-1 flex">
+                            <div class="px-1 py-0.5 bg-[#141f2c66]">
+                                <span class="text-white">Rp 89 999</span>
+                            </div>
+                        </div>
+                    </a>
+                    <button
+                        class="absolute flex bg-white transition opacity-0 translate-x-1 right-1.5 top-1.5 px-2 py-[0.33rem] rounded-[0.15rem] shadow-moreMenu text-black gap-[0.15rem] group-hover/game-card:translate-x-0 group-hover/game-card:opacity-100 hover:bg-[#67c1f5] group/more-menu game-card-more-btn">
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                    </button>
+                </div>
+                <div class="relative gradient-game-cards group/game-card text-xs">
+                    <a href="product-detail/starwarsProdDetail.html">
+                        <img src="https://cdn.akamai.steamstatic.com/steam/subs/401587/header_292x136.jpg?t=1574100600"
+                            alt="">
+                        <div class="p-1 flex">
+                            <div class="px-1 py-0.5 text-discount bg-[#4c6b22]">
+                                <span class=" ">-90%</span>
+                            </div>
+                            <div class="px-1 py-0.5 bg-[#141f2c66]">
+                                <span
+                                    class="text-discountOriginalPrice before:content-[''] relative before:left-0 before:right-0 before:border-b before:absolute before:top-[43%] before:-skew-y-[8deg] before:border-discountOriginalPrice">Rp
+                                    569 000</span>
+                                <span class="text-discount">Rp 56 900</span>
+                            </div>
+                        </div>
+                    </a>
+                    <button
+                        class="absolute flex bg-white transition opacity-0 translate-x-1 right-1.5 top-1.5 px-2 py-[0.33rem] rounded-[0.15rem] shadow-moreMenu text-black gap-[0.15rem] group-hover/game-card:translate-x-0 group-hover/game-card:opacity-100 hover:bg-[#67c1f5] group/more-menu game-card-more-btn">
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                    </button>
+                </div>
+                <div class="relative gradient-game-cards group/game-card text-xs">
+                    <a href="product-detail/backroomProdDetail.html">
+                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1943950/header_292x136.jpg?t=1710893725"
+                            alt="">
+                        <div class="p-1 flex">
+                            <div class="px-1 py-0.5 bg-[#141f2c66]">
+                                <span class="text-white">Rp 69 999</span>
+                            </div>
+                        </div>
+                    </a>
+                    <button
+                        class="absolute flex bg-white transition opacity-0 translate-x-1 right-1.5 top-1.5 px-2 py-[0.33rem] rounded-[0.15rem] shadow-moreMenu text-black gap-[0.15rem] group-hover/game-card:translate-x-0 group-hover/game-card:opacity-100 hover:bg-[#67c1f5] group/more-menu game-card-more-btn">
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                        <div class="w-[0.3rem] h-[0.3rem] bg-[#8d949b] rounded-full group-hover/more-menu:bg-white">
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-thumbs flex gap-1 justify-center mt-3">
+                <div class="carousel-thumb focus w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+                <div class="carousel-thumb w-4 h-2 rounded-sm cursor-pointer"></div>
+            </div>
+            <div
+                class="absolute bg-[#3d4450] top-5 left-[6.1rem] p-2 z-[1500] flex-col gap-1 rounded-sm shadow-moreMenu game-card-more text-sm hidden opacity-0 transition duration-300">
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Add to your
+                        wishlist</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Ignore</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Store
+                        preferences</button>
+                </div>
+            </div>
+            <div
+                class="absolute bg-[#3d4450] top-5 left-[23.5rem] p-2 z-[1500] flex flex-col gap-1 rounded-sm shadow-moreMenu game-card-more text-sm hidden opacity-0 transition duration-300">
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Add to your
+                        wishlist</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Ignore</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Store
+                        preferences</button>
+                </div>
+            </div>
+            <div
+                class="absolute bg-[#3d4450] top-5 right-[16.7rem] p-2 z-[1500] flex flex-col gap-1 rounded-sm shadow-moreMenu game-card-more text-sm hidden opacity-0 transition duration-300">
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Add to your
+                        wishlist</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Ignore</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Store
+                        preferences</button>
+                </div>
+            </div>
+            <div
+                class="absolute bg-[#3d4450] top-5 -right-3 p-2 z-[1500] flex flex-col gap-1 rounded-sm shadow-moreMenu game-card-more text-sm hidden opacity-0 transition duration-300">
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Add to your
+                        wishlist</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Ignore</button>
+                </div>
+                <div>
+                    <button class="px-4 py-2 rounded-sm hover:bg-[#464d58] w-full text-left">Store
+                        preferences</button>
+                </div>
+            </div>
+        </div>
+        <!-- END Feature: Under 90k -->
+    </div>
+    <script src="assets/homepage.js"></script>
+</body>
+
+</html>
