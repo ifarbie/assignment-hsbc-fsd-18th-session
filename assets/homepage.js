@@ -22,27 +22,34 @@ const categoriesData = [
 ];
 const browsesData = ["New Release", "Specials", "Free Games", "By User Tags"];
 
-const gameCardMoreBtn = document.querySelectorAll(".game-card-more-btn");
-gameCardMoreBtn.forEach((element, index) => {
-    const gameCardMore = document.getElementsByClassName("game-card-more")[index];
-    element.addEventListener("click", function () {
-        gameCardMore.classList.remove("hidden");
+main()
 
-        setTimeout(() => {
-            gameCardMore.classList.add("opacity-100");
-        }, 50);
-    })
-    gameCardMore.addEventListener("mouseleave", function () {
-        gameCardMore.classList.remove("opacity-100");
+function main() {
+    gameCardMoreBtnFunc();
+    showCategoryContainer(categoriesData);
+    showBrowsesContainer(browsesData);
+}
 
-        setTimeout(() => {
-            gameCardMore.classList.add("hidden");
-        }, 200);
-    })
-});
+function gameCardMoreBtnFunc() {
+    const gameCardMoreBtn = document.querySelectorAll(".game-card-more-btn");
+    gameCardMoreBtn.forEach((element, index) => {
+        const gameCardMore = document.getElementsByClassName("game-card-more")[index];
+        element.addEventListener("click", function () {
+            gameCardMore.classList.remove("hidden");
 
-showCategoryContainer(categoriesData);
-showBrowsesContainer(browsesData);
+            setTimeout(() => {
+                gameCardMore.classList.add("opacity-100");
+            }, 50);
+        })
+        gameCardMore.addEventListener("mouseleave", function () {
+            gameCardMore.classList.remove("opacity-100");
+
+            setTimeout(() => {
+                gameCardMore.classList.add("hidden");
+            }, 200);
+        })
+    });
+}
 
 function createCategoryCard(category) {
     return (
